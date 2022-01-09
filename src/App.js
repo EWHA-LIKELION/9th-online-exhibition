@@ -1,8 +1,8 @@
-import { Route, Routes } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import reset from 'styled-reset';
 import Main from './pages/Main';
+import Detail from './pages/Detail';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/detail" element={<Main />} />
+        <Route path="/detail" element={<Detail />} />
       </Routes>
     </BrowserRouter>
   );
@@ -36,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     margin: 0 auto;
     font-family: 'Noto Sans KR', sans-serif;
+    background:#000000;
   }
 
   
