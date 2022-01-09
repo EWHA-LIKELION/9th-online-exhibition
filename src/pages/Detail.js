@@ -2,12 +2,28 @@ import React from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/Header';
 import { MainEmoji } from '../components/detail/MainEmoji';
+import navigate from '../static/navigate.svg';
 const Detail = () => {
   return (
     <Container>
       <Header exist={true} />
       <MainEmoji />
-      <Title>Website Title</Title>
+      <TextWrapper>
+        <Title>Website Title</Title>
+        <TextLine></TextLine>
+        <Title>Description</Title>
+        <Description>
+          대왕고래에게 유일하게 알려진 자연 위협은 범고래이다. 대왕고래의
+          성체들은 이런 엄청난 지구력과 준수한 속도로 범고래 무리를 따돌린다. 이
+          전략은 단순하지만 성체의 경우 탈출 성공률이 매우 높은데, 그 이유는
+          범고래가 제대로 공격을 하려면
+        </Description>
+      </TextWrapper>
+      <ImgWrapper></ImgWrapper>
+      <Navigator>
+        <img src={navigate} />
+        <p>Touch Here to Visit Website</p>
+      </Navigator>
     </Container>
   );
 };
@@ -16,7 +32,12 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-position: 43px 20px;
 `;
+const TextWrapper = styled.div`
+  margin: 0 36px;
+`;
 const Title = styled.div`
+  margin-bottom: 18px;
+
   font-family: Manrope;
   font-style: normal;
   font-weight: 800;
@@ -25,4 +46,18 @@ const Title = styled.div`
 
   color: #ffffff;
 `;
+const TextLine = styled.div`
+  width: 303px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+`;
+const Description = styled.div`
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 22px;
+`;
+const ImgWrapper = styled.div`
+  margin-top: 50px;
+`;
+const Navigator = styled.div``;
 export default Detail;
