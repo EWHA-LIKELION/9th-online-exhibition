@@ -33,6 +33,11 @@ const Main = () => {
             return <Planet index={index} />;
           })}
         </PlanetContainer>
+        <SizedBox height={60} />
+        <Separator />
+        <SizedBox height={18} />
+        <FooterLabel>©2021 LIKELION EWHA</FooterLabel>
+        <SizedBox height={20} />
       </Container>
     </>
   );
@@ -80,4 +85,21 @@ const LogoTitleWrapper = styled.div`
 const ColumnWrapper = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const Separator = styled.div`
+  height: 1px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+`;
+
+const FooterLabel = styled.div`
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.4);
 `;
