@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavigateBar } from '../components/detail/NavigateBar';
 import { Header } from '../components/Header';
 import { MainEmoji } from '../components/detail/MainEmoji';
-import navigate from '../static/navigate.svg';
 const Detail = () => {
   return (
     <Container>
@@ -20,10 +20,7 @@ const Detail = () => {
         </Description>
       </TextWrapper>
       <ImgWrapper></ImgWrapper>
-      <Navigator>
-        <img src={navigate} />
-        <p>Touch Here to Visit Website</p>
-      </Navigator>
+      <NavigateBar />
     </Container>
   );
 };
@@ -59,5 +56,4 @@ const Description = styled.div`
 const ImgWrapper = styled.div`
   margin-top: 50px;
 `;
-const Navigator = styled.div``;
 export default Detail;
