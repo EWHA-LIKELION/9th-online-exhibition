@@ -12,7 +12,6 @@ const Planet = ({ index }) => {
       <SizedBox height={19} />
       <Title>Website Title</Title>
       <SizedBox height={2} />
-
       <Name>이화연</Name>
     </PlanetContainer>
   );
@@ -25,6 +24,12 @@ const PlanetContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  &:nth-child(2n) {
+    align-self: flex-end;
+  }
+  &:nth-child(n + 2) {
+    margin-top: -66px;
+  }
 `;
 
 const PlanetWrapper = styled.div`
