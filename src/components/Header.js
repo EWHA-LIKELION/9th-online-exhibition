@@ -2,19 +2,22 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import backIcon from '../static/back.svg';
+
 export const Header = ({ exist }) => {
   const navigate = useNavigate();
   return (
     <>
-      <Container>
-        {exist && (
+      <Container exist={exist}>
+        {exist ? (
           <BackButton
             src={backIcon}
             alt="뒤로가기"
             onClick={() => navigate(-1)}
           />
+        ) : (
+          <></>
         )}
-        <HeaderText>LIKE LION EWHA</HeaderText>
+        <HeaderText exist={exist}>LIKE LION EWHA</HeaderText>
         <div></div>
       </Container>
       <TextLine></TextLine>
@@ -24,10 +27,9 @@ export const Header = ({ exist }) => {
 const Container = styled.div`
   height: 57px;
   background-color: #000000;
-
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: ${(props) => (props.exist ? 'space-between' : 'center')};
 `;
 
 const TextLine = styled.div`
@@ -46,7 +48,7 @@ const HeaderText = styled.span`
   display: inline-block;
 
   margin-left: 32px;
-  margin-right: 93px;
+  margin-right: ${(props) => (props.exist ? '93px' : '32px')};
   padding: 18px 0;
   color: #ffffff;
   font-family: Manrope;
