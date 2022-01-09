@@ -27,6 +27,9 @@ const PlanetContainer = styled.div`
   &:nth-child(2n) {
     align-self: flex-end;
   }
+  &:nth-child(n + 2) {
+    margin-top: -66px;
+  }
 `;
 
 const PlanetWrapper = styled.div`
