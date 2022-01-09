@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import Planet from '../components/main/Planet';
 
 const Main = () => {
-  return <Container></Container>;
+  return (
+    <Container>
+      <Planet index={0} />
+    </Container>
+  );
 };
 
 export default Main;
