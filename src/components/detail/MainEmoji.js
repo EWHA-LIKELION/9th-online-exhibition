@@ -1,45 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
-import detailBack from '../../static/detail_back.png';
 import emoji from '../../static/emoji.png';
 import quotes from '../../static/quotes.svg';
 export const MainEmoji = () => {
   return (
-    <>
-      <BackImg src={detailBack} />
-      <Emoji src={emoji} />
-      <div>
+    <Container>
+      <ImgWrapper>
+        <Emoji src={emoji} />
         <Quotes src={quotes} />
         <Title>위트있는 사이트 한줄소개 어쩌고 저쩌고</Title>
-      </div>
-    </>
+      </ImgWrapper>
+    </Container>
   );
 };
-const BackImg = styled.img`
-  position: absolute;
-  width: 284px;
-  height: 266px;
-  left: 43px;
-  top: 20px;
+const Container = styled.div`
+  margin-top: 65px;
+`;
+const ImgWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
 `;
 const Emoji = styled.img`
-  position: absolute;
   width: 60px;
   height: 60px;
-  left: 157px;
-  top: 122px;
 `;
 const Quotes = styled.img`
-  position: absolute;
-  left: 62px;
-  top: 196px;
+  width: 251px;
+  height: 140px;
 `;
 const Title = styled.span`
   color: #ffffff;
+
   position: absolute;
+  top: 50%;
   width: 159px;
-  left: 108px;
-  top: 232px;
 
   font-family: Noto Sans KR;
   font-weight: bold;
