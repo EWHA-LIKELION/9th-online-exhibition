@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     margin: 0 auto;
   }
-
+  
 `;
 
 export default App;
