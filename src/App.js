@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import reset from 'styled-reset';
 import Main from './pages/Main';
 import Detail from './pages/Detail';
-
 function App() {
   return (
     <>
