@@ -44,6 +44,8 @@ const PlanetWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: rotate_image 20s linear infinite;
+  transform-origin: 50% 50%;
 `;
 
 const Title = styled.div`

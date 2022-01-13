@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
   *{
     box-sizing: border-box;
     font-family: 'Noto Sans KR', sans-serif;
+    
   }
   body{
     max-width: 425px;
@@ -37,6 +38,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Sans KR', sans-serif;
     background:#000000;
   }
+  @keyframes rotate_image{
+	100% {
+    	transform: rotate(360deg);
+    }
+}
 
   
 `;
