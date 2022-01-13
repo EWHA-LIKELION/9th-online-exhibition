@@ -1,18 +1,23 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import { ReactComponent as PlanetImage } from '../../static/planet.svg';
+import siteData from '../../static/siteData';
 import SizedBox from '../SizedBox';
 
-const Planet = ({ index }) => {
+const Planet = ({ index, navigate }) => {
+  const handlePlanetClicked = () => {
+    navigate(`/detail/${index}`);
+  };
+
   return (
     <PlanetContainer>
-      <PlanetWrapper>
+      <PlanetWrapper onClick={handlePlanetClicked}>
         <PlanetImage />
       </PlanetWrapper>
       <SizedBox height={19} />
-      <Title>Website Title</Title>
+      <Title>{siteData[index].title}</Title>
       <SizedBox height={2} />
-      <Name>이화연</Name>
+      <Name>{siteData[index].name}</Name>
     </PlanetContainer>
   );
 };

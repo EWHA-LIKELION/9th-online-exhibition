@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import { NavigateBar } from '../components/detail/NavigateBar';
 import { Header } from '../components/Header';
 import { MainEmoji } from '../components/detail/MainEmoji';
+import { useParams } from 'react-router';
+
 const Detail = () => {
+  const { currentIndex } = useParams();
+
   return (
     <Container>
       <Header exist={true} />
