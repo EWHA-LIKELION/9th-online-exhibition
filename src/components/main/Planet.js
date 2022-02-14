@@ -1,18 +1,24 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { ReactComponent as PlanetImage } from '../../static/planet.svg';
+import siteData from '../../static/siteData';
 import SizedBox from '../SizedBox';
 
-const Planet = ({ index }) => {
+const Planet = ({ index, navigate }) => {
+  const handlePlanetClicked = () => {
+    navigate(`/detail/${index}`);
+  };
+
   return (
     <PlanetContainer>
-      <PlanetWrapper>
-        <PlanetImage />
+      <PlanetWrapper onClick={handlePlanetClicked}>
+        <PlanetImage
+          src={require(`../../static/planets/${siteData[index].name}.png`)}
+        />
       </PlanetWrapper>
       <SizedBox height={19} />
-      <Title>Website Title</Title>
+      <Title>{siteData[index].title}</Title>
       <SizedBox height={2} />
-      <Name>이화연</Name>
+      <Name>{siteData[index].name}</Name>
     </PlanetContainer>
   );
 };
@@ -34,11 +40,14 @@ const PlanetContainer = styled.div`
 
 const PlanetWrapper = styled.div`
   width: 155px;
+  height: 155px;
   background-image: url(${process.env.PUBLIC_URL + 'main-planet-border.png'});
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: rotate_image 20s linear infinite;
+  transform-origin: 50% 50%;
 `;
 
 const Title = styled.div`
@@ -56,4 +65,9 @@ const Name = styled.div`
   font-size: 10px;
   line-height: 14px;
   color: rgba(255, 255, 255, 0.9);
+`;
+
+const PlanetImage = styled.img`
+  width: 121px;
+  height: 121px;
 `;

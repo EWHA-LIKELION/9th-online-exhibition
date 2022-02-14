@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import emoji from '../../static/emoji.png';
 import quotes from '../../static/quotes.svg';
-export const MainEmoji = () => {
+export const MainEmoji = ({ siteIntro }) => {
   return (
     <Container>
       <ImgWrapper>
         <Emoji src={emoji} />
         <Quotes src={quotes} />
-        <Title>위트있는 사이트 한줄소개 어쩌고 저쩌고</Title>
+        <Title>{siteIntro}</Title>
       </ImgWrapper>
     </Container>
   );
@@ -42,4 +42,5 @@ const Title = styled.span`
   font-weight: bold;
   font-size: 15px;
   line-height: 22px;
+  text-align: center;
 `;
