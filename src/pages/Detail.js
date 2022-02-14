@@ -5,7 +5,6 @@ import { Header } from '../components/Header';
 import { MainEmoji } from '../components/detail/MainEmoji';
 import { useParams } from 'react-router';
 import siteData from '../static/siteData';
-import detailBack from '../static/detail_back.png';
 
 const Detail = () => {
   const { currentIndex } = useParams();
