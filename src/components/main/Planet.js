@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import siteData from '../../static/siteData';
 import SizedBox from '../SizedBox';
+import planetBorder from '../../static/main-planet-border.png';
 
 const Planet = ({ index, navigate }) => {
   const handlePlanetClicked = () => {
@@ -41,7 +42,7 @@ const PlanetContainer = styled.div`
 const PlanetWrapper = styled.div`
   width: 155px;
   height: 155px;
-  background-image: url(${process.env.PUBLIC_URL + 'main-planet-border.png'});
+  background-image: url(${planetBorder});
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
