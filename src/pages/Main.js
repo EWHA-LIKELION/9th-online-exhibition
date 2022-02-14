@@ -5,8 +5,10 @@ import Planet from '../components/main/Planet';
 import SizedBox from '../components/SizedBox';
 import siteData from '../static/siteData';
 import { ReactComponent as Logo } from '../static/likelion.svg';
+import { useNavigate } from 'react-router';
 
 const Main = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Header exist={false} />
@@ -30,7 +32,7 @@ const Main = () => {
         <SizedBox height={60} />
         <PlanetContainer>
           {siteData.map((item, index) => {
-            return <Planet index={index} />;
+            return <Planet index={index} navigate={navigate} key={index} />;
           })}
         </PlanetContainer>
         <SizedBox height={60} />

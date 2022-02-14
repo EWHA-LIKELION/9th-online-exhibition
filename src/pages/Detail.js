@@ -3,14 +3,19 @@ import styled from 'styled-components';
 import { NavigateBar } from '../components/detail/NavigateBar';
 import { Header } from '../components/Header';
 import { MainEmoji } from '../components/detail/MainEmoji';
+import { useParams } from 'react-router';
+import siteData from '../static/siteData';
+
 const Detail = () => {
+  const { currentIndex } = useParams();
+
   return (
     <Container>
       <Header exist={true} />
-      <MainEmoji />
+      <MainEmoji siteIntro={siteData[currentIndex].siteIntro} />
       <TextWrapper>
-        <Title>Website Title</Title>
-        <TextLine></TextLine>
+        <Title>{siteData[currentIndex].title}</Title>
+        <TextLine />
         <Title>Description</Title>
         <Description>
           대왕고래에게 유일하게 알려진 자연 위협은 범고래이다. 대왕고래의

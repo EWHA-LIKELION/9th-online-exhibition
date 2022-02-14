@@ -17,7 +17,7 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/detail/:currentIndex" element={<Detail />} />
       </Routes>
     </BrowserRouter>
   );
@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
   *{
     box-sizing: border-box;
     font-family: 'Noto Sans KR', sans-serif;
+    
   }
   body{
     max-width: 425px;
@@ -37,6 +38,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Sans KR', sans-serif;
     background:#000000;
   }
+  @keyframes rotate_image{
+	100% {
+    	transform: rotate(360deg);
+    }
+}
 
   
 `;
