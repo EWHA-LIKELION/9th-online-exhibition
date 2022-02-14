@@ -6,6 +6,8 @@ import SizedBox from '../components/SizedBox';
 import siteData from '../static/siteData';
 import { ReactComponent as Logo } from '../static/likelion.svg';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
+import mainBackground from '../static/main-background.png';
 
 const Main = () => {
   const navigate = useNavigate();
@@ -21,7 +23,9 @@ const Main = () => {
             <MainTitle year={true}>2021</MainTitle>
             <SizedBox height={13} />
           </ColumnWrapper>
-          <Logo />
+          <Link to="/likelion">
+            <Logo />
+          </Link>
         </LogoTitleWrapper>
 
         <MainTitle year={false}>
@@ -50,7 +54,7 @@ export default Main;
 const Container = styled.div`
   padding: 0px 36px;
   height: 100%;
-  background-image: url(${process.env.PUBLIC_URL + 'main-background.png'});
+  background-image: url(${mainBackground});
   background-size: contain;
   background-repeat: no-repeat;
   display: flex;

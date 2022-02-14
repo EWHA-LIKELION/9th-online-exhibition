@@ -5,6 +5,7 @@ import { Header } from '../components/Header';
 import { MainEmoji } from '../components/detail/MainEmoji';
 import { useParams } from 'react-router';
 import siteData from '../static/siteData';
+import detailBack from '../static/detail_back.png';
 
 const Detail = () => {
   const { currentIndex } = useParams();
@@ -31,7 +32,6 @@ const Detail = () => {
   );
 };
 const Container = styled.div`
-  background-image: url(${process.env.PUBLIC_URL + 'detail_back.png'});
   background-repeat: no-repeat;
   background-position: 43px 20px;
   padding-bottom: 200px;
