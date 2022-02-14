@@ -11,26 +11,26 @@ import taeeunmoji from '../static/eunimoji.png';
 import jinimoji from '../static/jinimoji.png';
 import sookimoji from '../static/sookimoji.png';
 import recruit from '../static/recruit.png';
-import { Link } from 'react-router-dom';
+import arrow from '../static/arrow.svg';
 
 const Introduction = () => {
   const curriculums = [
     {
-      id: '01',
+      id: 1,
       title: 'Python & Git',
       content:
         'Python 기본 문법을 공부하고 Git을 사용하면서 프로젝트 협업 방법을 예습합니다.',
       background: 'rgba(61, 226, 147, 0.15)',
     },
     {
-      id: '02',
+      id: 2,
       title: 'Web 기초',
       content:
         'html과 css를 공부하고 간단한 페이지를 만들어 보며 웹 프론트엔드의 기초를 쌓습니다.',
       background: 'rgba(61, 226, 147, 0.25)',
     },
     {
-      id: '03',
+      id: 3,
       title: 'Django',
       content:
         'Python을 기반으로 하는 Django를 학습하고 웹 백엔드의 기초를 쌓습니다.',
@@ -83,16 +83,19 @@ const Introduction = () => {
         <FlexWrapper>
           <SquareTitle style={{ width: 93 }}>멋사 커리큘럼</SquareTitle>
           {curriculums.map((curriculum) => (
-            <Curriculum
-              key={curriculum.id}
-              style={{ background: `${curriculum.background}` }}
-            >
-              <CurriculumTitleWrapper>
-                <CurriculumTitle>{curriculum.title}</CurriculumTitle>
-                <CurriculumTitle>{curriculum.id}</CurriculumTitle>
-              </CurriculumTitleWrapper>
-              <Content>{curriculum.content}</Content>
-            </Curriculum>
+            <ImageWrapper>
+              <Curriculum
+                key={curriculum.id}
+                style={{ background: `${curriculum.background}` }}
+              >
+                <CurriculumTitleWrapper>
+                  <CurriculumTitle>{curriculum.title}</CurriculumTitle>
+                  <CurriculumTitle>0{curriculum.id}</CurriculumTitle>
+                </CurriculumTitleWrapper>
+                <Content>{curriculum.content}</Content>
+              </Curriculum>
+              {curriculum.id < 3 && <img src={arrow} />}
+            </ImageWrapper>
           ))}
         </FlexWrapper>
         <FlexWrapper>
@@ -183,7 +186,7 @@ const Curriculum = styled.div`
   width: 303px;
 
   padding: 15px;
-  margin-bottom: 22px;
+  margin: 5px 0;
 
   border-radius: 15px;
   backdrop-filter: blur(4px);
