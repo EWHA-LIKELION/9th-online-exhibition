@@ -16,12 +16,14 @@ const Detail = () => {
       <TextWrapper>
         <Title>{siteData[currentIndex].title}</Title>
         <TextLine />
-        <Description>
-          {siteData[currentIndex].description}
-        </Description>
+        <Description>{siteData[currentIndex].description}</Description>
       </TextWrapper>
-      <ImgWrapper></ImgWrapper>
-      <NavigateBar currentIndex={currentIndex}/>
+      <ImgWrapper>
+        {siteData[currentIndex].siteImage.map((item, index) => (
+          <SiteImage src={require(`../static/${item}`)} key={index} />
+        ))}
+      </ImgWrapper>
+      <NavigateBar currentIndex={currentIndex} />
     </Container>
   );
 };
@@ -56,9 +58,11 @@ const Description = styled.div`
   line-height: 22px;
   white-space: pre-wrap;
   font-weight: 400;
-
 `;
 const ImgWrapper = styled.div`
-  margin-top: 50px;
+  padding: 50px 36px 0px 36px;
+`;
+const SiteImage = styled.img`
+  width: 100%;
 `;
 export default Detail;
