@@ -68,6 +68,8 @@ const Name = styled.div`
 `;
 
 const PlanetImage = styled.img`
-  width: 121px;
-  height: 121px;
+  /* width: 121px;
+  height: 121px; */
+  width: 140px;
+  height: 140px;
 `;
