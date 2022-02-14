@@ -32,7 +32,7 @@ const Main = () => {
         <SizedBox height={60} />
         <PlanetContainer>
           {siteData.map((item, index) => {
-            return <Planet index={index} navigate={navigate} />;
+            return <Planet index={index} navigate={navigate} key={index} />;
           })}
         </PlanetContainer>
         <SizedBox height={60} />

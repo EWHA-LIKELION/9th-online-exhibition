@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { ReactComponent as PlanetImage } from '../../static/planet.svg';
 import siteData from '../../static/siteData';
 import SizedBox from '../SizedBox';
 
@@ -12,7 +11,9 @@ const Planet = ({ index, navigate }) => {
   return (
     <PlanetContainer>
       <PlanetWrapper onClick={handlePlanetClicked}>
-        <PlanetImage />
+        <PlanetImage
+          src={require(`../../static/planets/${siteData[index].name}.png`)}
+        />
       </PlanetWrapper>
       <SizedBox height={19} />
       <Title>{siteData[index].title}</Title>
@@ -39,6 +40,7 @@ const PlanetContainer = styled.div`
 
 const PlanetWrapper = styled.div`
   width: 155px;
+  height: 155px;
   background-image: url(${process.env.PUBLIC_URL + 'main-planet-border.png'});
   background-repeat: no-repeat;
   display: flex;
@@ -63,4 +65,9 @@ const Name = styled.div`
   font-size: 10px;
   line-height: 14px;
   color: rgba(255, 255, 255, 0.9);
+`;
+
+const PlanetImage = styled.img`
+  width: 121px;
+  height: 121px;
 `;
