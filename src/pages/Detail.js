@@ -20,7 +20,10 @@ const Detail = () => {
       </TextWrapper>
       <ImgWrapper>
         {siteData[currentIndex].siteImage.map((item, index) => (
-          <SiteImage src={require(`../static/${item}`)} key={index} />
+          <SiteImage
+            src={require(`../static/siteImages/${item}`)}
+            key={index}
+          />
         ))}
       </ImgWrapper>
       <NavigateBar currentIndex={currentIndex} />
@@ -64,5 +67,8 @@ const ImgWrapper = styled.div`
 `;
 const SiteImage = styled.img`
   width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  object-fit: contain;
 `;
 export default Detail;
