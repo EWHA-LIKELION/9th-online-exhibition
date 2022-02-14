@@ -1,12 +1,15 @@
 import styled from 'styled-components';
-import navigate from '../../static/navigate.svg';
-import navigateButton from '../../static/navigate_button.svg';
-export const NavigateBar = () => {
+import {ReactComponent as Nav} from '../../static/navigate_button.svg'
+import siteData from '../../static/siteData';
+
+export const NavigateBar = ({currentIndex}) => {
   return (
     <Navigator>
-      <NavigateImg src={navigate} />
+      <NavigateImg src={require(`../../static/navigations/${siteData[currentIndex].name}.png`)} />
       <NavigateText>Touch Here to Visit Website</NavigateText>
-      <NavigateButton src={navigateButton} />
+      <NavigateButton>
+        <Nav fill={siteData[currentIndex].navigateButtonColor}/>
+      </NavigateButton>
     </Navigator>
   );
 };
@@ -16,12 +19,13 @@ const Navigator = styled.div`
 const NavigateImg = styled.img`
   position: fixed;
   bottom: 0;
+  width:100%;
 `;
 const NavigateText = styled.span`
   position: fixed;
   width: 156px;
   left: 108px;
-  top: 691px;
+  bottom: 23px;
 
   font-family: Manrope;
   font-weight: 600;
@@ -31,8 +35,8 @@ const NavigateText = styled.span`
   color: #ffffff;
   opacity: 0.8;
 `;
-const NavigateButton = styled.img`
+const NavigateButton = styled.div`
   position: fixed;
   left: 265px;
-  top: 650px;
+  bottom: 56px;
 `;

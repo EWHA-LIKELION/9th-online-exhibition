@@ -16,16 +16,17 @@ const Detail = () => {
       <TextWrapper>
         <Title>{siteData[currentIndex].title}</Title>
         <TextLine />
-        <Title>Description</Title>
-        <Description>
-          대왕고래에게 유일하게 알려진 자연 위협은 범고래이다. 대왕고래의
-          성체들은 이런 엄청난 지구력과 준수한 속도로 범고래 무리를 따돌린다. 이
-          전략은 단순하지만 성체의 경우 탈출 성공률이 매우 높은데, 그 이유는
-          범고래가 제대로 공격을 하려면
-        </Description>
+        <Description>{siteData[currentIndex].description}</Description>
       </TextWrapper>
-      <ImgWrapper></ImgWrapper>
-      <NavigateBar />
+      <ImgWrapper>
+        {siteData[currentIndex].siteImage.map((item, index) => (
+          <SiteImage
+            src={require(`../static/siteImages/${item}`)}
+            key={index}
+          />
+        ))}
+      </ImgWrapper>
+      <NavigateBar currentIndex={currentIndex} />
     </Container>
   );
 };
@@ -33,6 +34,7 @@ const Container = styled.div`
   background-image: url(${process.env.PUBLIC_URL + 'detail_back.png'});
   background-repeat: no-repeat;
   background-position: 43px 20px;
+  padding-bottom: 200px;
 `;
 const TextWrapper = styled.div`
   margin: 0 36px;
@@ -57,8 +59,16 @@ const Description = styled.div`
   color: #ffffff;
   font-size: 14px;
   line-height: 22px;
+  white-space: pre-wrap;
+  font-weight: 400;
 `;
 const ImgWrapper = styled.div`
-  margin-top: 50px;
+  padding: 50px 36px 0px 36px;
+`;
+const SiteImage = styled.img`
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  object-fit: contain;
 `;
 export default Detail;

@@ -36,11 +36,12 @@ const Title = styled.span`
 
   position: absolute;
   top: 50%;
-  width: 159px;
+  width: 167px;
 
   font-family: Noto Sans KR;
   font-weight: bold;
   font-size: 15px;
   line-height: 22px;
   text-align: center;
+  white-space: pre-wrap;
 `;
