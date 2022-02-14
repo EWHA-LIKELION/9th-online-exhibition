@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/Header';
 import ideathon from '../static/activities/ideathon.png';
@@ -14,6 +14,10 @@ import recruit from '../static/recruit.png';
 import arrow from '../static/arrow.svg';
 
 const Introduction = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const curriculums = [
     {
       id: 1,

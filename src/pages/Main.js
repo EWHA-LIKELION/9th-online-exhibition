@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/Header';
 import Planet from '../components/main/Planet';
@@ -11,6 +11,10 @@ import mainBackground from '../static/main-background.png';
 
 const Main = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Header exist={false} />
