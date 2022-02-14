@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import reset from 'styled-reset';
 import Main from './pages/Main';
 import Detail from './pages/Detail';
+import Introduction from './pages/Introduction';
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/detail/:currentIndex" element={<Detail />} />
+        <Route path="/likelion" element={<Introduction />} />
       </Routes>
     </BrowserRouter>
   );
