@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { NavigateBar } from '../components/detail/NavigateBar';
 import { Header } from '../components/Header';
@@ -8,6 +8,10 @@ import siteData from '../static/siteData';
 
 const Detail = () => {
   const { currentIndex } = useParams();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Container>
