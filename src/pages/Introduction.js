@@ -24,21 +24,21 @@ const Introduction = () => {
       id: 1,
       title: 'Python & Git',
       content:
-        'Python 기본 문법을 공부하고 Git을 사용하면서 프로젝트 협업 방법을 예습합니다.',
+        'Python 기본 문법을 공부하고 Git을 사용하면서\n프로젝트 협업 방법을 예습합니다.',
       background: 'rgba(61, 226, 147, 0.15)',
     },
     {
       id: 2,
       title: 'Web 기초',
       content:
-        'html과 css를 공부하고 간단한 페이지를 만들어 보며 웹 프론트엔드의 기초를 쌓습니다.',
+        'html과 css를 공부하고 간단한 페이지를 만들어\n보며 웹 프론트엔드의 기초를 쌓습니다.',
       background: 'rgba(61, 226, 147, 0.25)',
     },
     {
       id: 3,
       title: 'Django',
       content:
-        'Python을 기반으로 하는 Django를 학습하고 웹 백엔드의 기초를 쌓습니다.',
+        'Python을 기반으로 하는 Django를 학습하고\n웹 백엔드의 기초를 쌓습니다.',
       background: 'rgba(61, 226, 147, 0.35)',
     },
   ];
@@ -88,8 +88,8 @@ const Introduction = () => {
 
         <FlexWrapper>
           <SquareTitle style={{ width: 93 }}>멋사 커리큘럼</SquareTitle>
-          {curriculums.map((curriculum) => (
-            <ImageWrapper>
+          {curriculums.map((curriculum, index) => (
+            <ImageWrapper key={index}>
               <Curriculum
                 key={curriculum.id}
                 style={{ background: `${curriculum.background}` }}
@@ -103,19 +103,23 @@ const Introduction = () => {
               {curriculum.id < 3 && <img src={arrow} />}
             </ImageWrapper>
           ))}
+          <SizedBox height={7} />
+          <Content>* 9기 기준이며, 10기 커리큘럼과 다를 수 있습니다.</Content>
         </FlexWrapper>
         <FlexWrapper>
           <SquareTitle style={{ width: 64 }}>활동내역</SquareTitle>
-          {activities.map((activity) => (
-            <img src={activity} style={{ marginBottom: 8 }} />
+          {activities.map((activity, index) => (
+            <img src={activity} style={{ marginBottom: 8 }} key={index} />
           ))}
+          <SizedBox height={4} />
+          <Content>* 9기 기준이며, 10기 커리큘럼과 다를 수 있습니다.</Content>
           <SquareTitle style={{ width: 53 }}>운영진</SquareTitle>
         </FlexWrapper>
 
         <div>
           <ManagementWrapper>
-            {management.map((manager) => (
-              <ImageWrapper>
+            {management.map((manager, index) => (
+              <ImageWrapper key={index}>
                 <img src={manager.img} style={{ width: 170 }} />
                 <Content>{manager.content}</Content>;
               </ImageWrapper>
@@ -244,10 +248,11 @@ const CurriculumTitle = styled.p`
 `;
 
 const Content = styled.p`
-  font-size: 14px;
+  font-size: 13px;
   color: #ffffff;
 
-  line-height: 23px;
+  line-height: 20px;
+  white-space: pre-wrap;
 `;
 
 const ManagementWrapper = styled.div`
