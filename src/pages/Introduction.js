@@ -12,6 +12,7 @@ import jinimoji from '../static/jinimoji.png';
 import sookimoji from '../static/sookimoji.png';
 import recruit from '../static/recruit.png';
 import arrow from '../static/arrow.svg';
+import SizedBox from '../components/SizedBox';
 
 const Introduction = () => {
   useEffect(() => {
@@ -124,14 +125,23 @@ const Introduction = () => {
         <FlexWrapper>
           <SquareTitle style={{ width: 85 }}>9기 아기사자</SquareTitle>
           <Content>🦁 휴먼기계바이오공학부 | 송유경</Content>
+          <SizedBox height={4} />
           <Content>🦁 화학신소재공학전공 | 윤지원</Content>
+          <SizedBox height={4} />
           <Content>🦁 사이버보안전공 | 김민영</Content>
+          <SizedBox height={4} />
           <Content>🦁 융합콘텐츠학과 | 김유나</Content>
+          <SizedBox height={4} />
           <Content>🦁 컴퓨터공학전공 | 김도연</Content>
+          <SizedBox height={4} />
           <Content>🦁 컴퓨터공학전공 | 김윤아</Content>
+          <SizedBox height={4} />
           <Content>🦁 컴퓨터공학전공 | 정다윤</Content>
+          <SizedBox height={4} />
           <Content>🦁 사회복지학과 | 김혜빈</Content>
+          <SizedBox height={4} />
           <Content>🦁 디자인학부 | 이주희</Content>
+          <SizedBox height={4} />
           <Content>🦁 경제학과 | 이지현</Content>
         </FlexWrapper>
       </Container>
