@@ -110,17 +110,31 @@ const Introduction = () => {
           ))}
           <SquareTitle style={{ width: 53 }}>운영진</SquareTitle>
         </FlexWrapper>
+
+        <div>
+          <ManagementWrapper>
+            {management.map((manager) => (
+              <ImageWrapper>
+                <img src={manager.img} style={{ width: 170 }} />
+                <Content>{manager.content}</Content>;
+              </ImageWrapper>
+            ))}
+          </ManagementWrapper>
+        </div>
+        <FlexWrapper>
+          <SquareTitle style={{ width: 85 }}>9기 아기사자</SquareTitle>
+          <Content>🦁 휴먼기계바이오공학부 | 송유경</Content>
+          <Content>🦁 화학신소재공학전공 | 윤지원</Content>
+          <Content>🦁 사이버보안전공 | 김민영</Content>
+          <Content>🦁 융합콘텐츠학과 | 김유나</Content>
+          <Content>🦁 컴퓨터공학전공 | 김도연</Content>
+          <Content>🦁 컴퓨터공학전공 | 김윤아</Content>
+          <Content>🦁 컴퓨터공학전공 | 정다윤</Content>
+          <Content>🦁 사회복지학과 | 김혜빈</Content>
+          <Content>🦁 디자인학부 | 이주희</Content>
+          <Content>🦁 경제학과 | 이지현</Content>
+        </FlexWrapper>
       </Container>
-      <div>
-        <ManagementWrapper>
-          {management.map((manager) => (
-            <ImageWrapper>
-              <img src={manager.img} style={{ width: 170 }} />
-              <Content>{manager.content}</Content>;
-            </ImageWrapper>
-          ))}
-        </ManagementWrapper>
-      </div>
       <ImageWrapper>
         <a href="https://www.notion.so/likelionewha/10-802131094ed5401a91839a6ce3fa033e">
           <img src={recruit} style={{ margin: '80px 0' }} />
@@ -141,7 +155,6 @@ const ActivityImages = styled.img`
   object-fit: contain;
   margin-top: -58px;
 `;
-const TextWrapper = styled.div``;
 
 const FlexWrapper = styled.div`
   display: flex;
@@ -236,6 +249,12 @@ const ImageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const GridWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 15px;
 `;
 
 export default Introduction;
