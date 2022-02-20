@@ -65,14 +65,15 @@ const Introduction = () => {
     <>
       <Header exist={true} />
       <Container>
-        <FlexWrapper>
+        <ActivityImages src={require('../static/activities/intro_image.png')} />
+        <FirstFlexWrapper>
           <Title>이화여자대학교</Title>
           <Title>멋쟁이사자처럼 9기</Title>
           <SubTitle>활동기간</SubTitle>
           <Text>2021. 03. 14 ― 11.30</Text>
           <SubTitle>공식 인스타그램</SubTitle>
           <Text>@likelion_ewha</Text>
-        </FlexWrapper>
+        </FirstFlexWrapper>
         <FlexWrapper>
           <SquareTitle style={{ width: 130 }}>멋쟁이사자처럼 소개</SquareTitle>
           <Content style={{ fontWeight: 'bold' }}>HACK YOUR LIFE! </Content>
@@ -132,15 +133,26 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: hidden;
 `;
 
+const ActivityImages = styled.img`
+  width: 100%;
+  object-fit: contain;
+  margin-top: -58px;
+`;
 const TextWrapper = styled.div``;
+
 const FlexWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
   width: 303px;
+`;
+
+const FirstFlexWrapper = styled(FlexWrapper)`
+  margin-top: -36px;
 `;
 
 const Title = styled.p`

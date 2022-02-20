@@ -2,12 +2,13 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import backIcon from '../static/back.svg';
+import SizedBox from './SizedBox';
 
 export const Header = ({ exist }) => {
   const navigate = useNavigate();
   return (
-    <>
-      <Container exist={exist}>
+    <Container>
+      <Wrapper exist={exist}>
         {exist ? (
           <BackButton
             src={backIcon}
@@ -18,13 +19,20 @@ export const Header = ({ exist }) => {
           <></>
         )}
         <HeaderText exist={exist}>LIKE LION EWHA</HeaderText>
-        <div></div>
-      </Container>
+        <SizedBox width={exist ? 25 : 0} />
+      </Wrapper>
       <TextLine></TextLine>
-    </>
+    </Container>
   );
 };
+
 const Container = styled.div`
+  padding: 0px 36px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Wrapper = styled.div`
   height: 57px;
   background-color: #000000;
   display: flex;
@@ -33,22 +41,22 @@ const Container = styled.div`
 `;
 
 const TextLine = styled.div`
-  width: 327px;
-  margin: 0 auto;
+  width: 100%;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 1px;
 `;
 const BackButton = styled.img`
   width: 20px;
   height: 15px;
 
-  margin-left: 41px;
+  margin-left: 5px;
 `;
 const HeaderText = styled.span`
   display: inline-block;
 
-  margin-left: 32px;
-  margin-right: ${(props) => (props.exist ? '93px' : '32px')};
+  /* margin-left: 32px;
+  margin-right: ${(props) => (props.exist ? '93px' : '32px')}; */
   padding: 18px 0;
   color: #ffffff;
   font-family: Manrope;
