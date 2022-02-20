@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import emoji from '../../static/emoji.png';
+// import emoji from '../../static/emoji.png';
 import quotes from '../../static/quotes.svg';
-export const MainEmoji = ({ siteIntro }) => {
+
+export const MainEmoji = ({ siteIntro, emoji }) => {
   return (
     <Container>
       <IMM src={require('../../static/detail_back.png')} />
       <ImgWrapper>
-        <Emoji src={emoji} />
+        <Emoji src={require(`../../static/emojies/${emoji}`)} />
         <Quotes src={quotes} />
         <Title>{siteIntro}</Title>
       </ImgWrapper>
@@ -27,11 +28,11 @@ const ImgWrapper = styled.div`
   align-items: center;
   z-index: 10;
   position: relative;
-  margin-top: -162px;
+  margin-top: -157px;
 `;
 const Emoji = styled.img`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   z-index: 10;
 `;
 const Quotes = styled.img`
