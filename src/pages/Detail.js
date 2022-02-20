@@ -9,14 +9,21 @@ import siteData from '../static/siteData';
 const Detail = () => {
   const { currentIndex } = useParams();
 
+  const hasLink = !(siteData[currentIndex].link === '');
+
+  const paddingBottom = window.innerWidth / 2 - 80;
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <Container>
+    <Container hasLink={hasLink}>
       <Header exist={true} />
-      <MainEmoji siteIntro={siteData[currentIndex].siteIntro} />
+      <MainEmoji
+        siteIntro={siteData[currentIndex].siteIntro}
+        emoji={siteData[currentIndex].emojiFile}
+      />
       <TextWrapper>
         <Title>{siteData[currentIndex].title}</Title>
         <TextLine />
@@ -30,17 +37,22 @@ const Detail = () => {
           />
         ))}
       </ImgWrapper>
-      <NavigateBar currentIndex={currentIndex} />
+      {hasLink ? (
+        <BottomSpace paddingBottom={paddingBottom}></BottomSpace>
+      ) : (
+        <></>
+      )}
+      {hasLink ? <NavigateBar currentIndex={currentIndex} /> : <></>}
     </Container>
   );
 };
 const Container = styled.div`
   background-repeat: no-repeat;
   background-position: 43px 20px;
-  padding-bottom: 200px;
+  padding-bottom: 20px;
 `;
 const TextWrapper = styled.div`
-  margin: 0 36px;
+  padding: 0 36px;
 `;
 const Title = styled.div`
   margin-bottom: 18px;
@@ -54,7 +66,7 @@ const Title = styled.div`
   color: #ffffff;
 `;
 const TextLine = styled.div`
-  width: 303px;
+  width: 100%;
   margin-bottom: 18px;
   border: 1px solid rgba(255, 255, 255, 0.5);
 `;
@@ -73,5 +85,12 @@ const SiteImage = styled.img`
   margin-bottom: 10px;
   border-radius: 5px;
   object-fit: contain;
+`;
+
+const BottomSpace = styled.div`
+  height: ${(props) => props.paddingBottom}px;
+  @media only screen and (min-width: 425px) {
+    height: 160px;
+  }
 `;
 export default Detail;

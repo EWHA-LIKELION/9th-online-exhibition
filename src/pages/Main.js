@@ -7,7 +7,7 @@ import siteData from '../static/siteData';
 import { ReactComponent as Logo } from '../static/likelion.svg';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import mainBackground from '../static/main-background.png';
+import background from '../static/background.png';
 
 const Main = () => {
   const navigate = useNavigate();
@@ -21,22 +21,23 @@ const Main = () => {
       <Container>
         <SizedBox height={25} />
 
-        <LogoTitleWrapper>
-          <ColumnWrapper>
-            <SizedBox height={30} />
-            <MainTitle year={true}>2021</MainTitle>
-            <SizedBox height={13} />
-          </ColumnWrapper>
-          <Link to="/likelion">
+        <Link to="/likelion" style={{ textDecoration: 'none' }}>
+          <LogoTitleWrapper>
+            <ColumnWrapper>
+              <SizedBox height={30} />
+              <MainTitle year={true}>2021</MainTitle>
+              <SizedBox height={13} />
+            </ColumnWrapper>
             <Logo />
-          </Link>
-        </LogoTitleWrapper>
-
-        <MainTitle year={false}>
-          LIKELION EWHA{'\n'}Website Exhibition
-        </MainTitle>
-        <SizedBox height={10} />
-        <IntroLabel>멋쟁이사자처럼 9기 아기사자 웹사이트 전시</IntroLabel>
+          </LogoTitleWrapper>
+        </Link>
+        <Link to="/likelion" style={{ textDecoration: 'none' }}>
+          <MainTitle year={false}>
+            LIKELION EWHA{'\n'}Website Exhibition
+          </MainTitle>
+          <SizedBox height={10} />
+          <IntroLabel>멋쟁이사자처럼 9기 아기사자 웹사이트 전시</IntroLabel>
+        </Link>
         <SizedBox height={60} />
         <PlanetContainer>
           {siteData.map((item, index) => {
@@ -57,9 +58,9 @@ export default Main;
 
 const Container = styled.div`
   padding: 0px 36px;
-  height: 100%;
-  background-image: url(${mainBackground});
-  background-size: contain;
+  width: 100%;
+  background-image: url(${background});
+  background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
