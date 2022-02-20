@@ -1,5 +1,46 @@
 const siteData = [
   {
+    name: '김도연',
+    title: 'DAYOFF',
+    emojiFile: 'emoji_day_off.png',
+    siteIntro: '쉬는 날 뭐해요?\n특별한 하루를 기록하고\n공유하는 웹사이트',
+    description:
+      '데이오프는 특별한 하루를 시간 순서대로 간편하게 기록하고 공유할 수 있는 웹사이트입니다.',
+    navigateButtonColor: '#A3EAFA',
+
+    siteImage: ['김도연_1.jpg', '김도연_2.jpg', '김도연_3.jpg', '김도연_4.jpg'],
+    link: 'https://dayoff.herokuapp.com/',
+  },
+  {
+    name: '이주희',
+    title: '인터위버',
+    emojiFile: 'emoji_interview.png',
+    siteIntro: '인터뷰 참여자들이 서로\n엮어 만들어가는 사이트!',
+    description:
+      '인터위버는 과제수행이나 자료조사를 위해서 인터뷰 대상자를 구하는 인터뷰어, 혹은 자기홍보를 위해 인터뷰 참여를 원하는 인터뷰이들이 서로 연결되어 만날 수 있는 사이트입니다.\n급하게 인터뷰 참여자가 필요할 때, 힘들게 수소문 하지 마시고 손쉽게 사이트에서 원하는 분야의 참여자를 탐색하거나, 혹은 게시글을 통해 홍보해 보세요!',
+    navigateButtonColor: '#5A77D1',
+    siteImage: [
+      'interweaver_cap1.png',
+      'interweaver_cap2.png',
+      'interweaver_cap3.png',
+      'interweaver_cap4.png',
+    ],
+    link: 'https://aeanaklee.pythonanywhere.com/',
+  },
+  {
+    name: '김혜빈',
+    title: '모두의 여행',
+    emojiFile: 'emoji_travel.png',
+    siteIntro: '다양한 사람들의\n다양한 여행 기록',
+
+    description:
+      '😭: 여행 계획 짜기 힘들어\n🤔: 여행지 맛집 후기, 믿을만한 건가?\n😎: 이번 여행 너무 좋았는데 공유하고 싶어!\n🥲: 여행 대리만족하고 싶어..\n...\n이런 생각 해보셨다면 주목!\n\n1️⃣ 여행 떠나기 전에, 여행을 떠나고 싶을 때, 심심할 때... 언제든 사이트를 구경해보세요.\n2️⃣ 여행을 다녀와서 글과 이미지를 함께 게시해서 나의 여행 계획, 정보, 사진을 공유하고\n3️⃣ 해시태그 기능을 통해 여행지를 모아보세요!\n\n이 모든 것을 할 수 있는 곳, 모두의 여행입니다✈️',
+    siteImage: ['김혜빈_1.png', '김혜빈_2.png', '김혜빈_3.png', '김혜빈_4.png'],
+    navigateButtonColor: '#25B6F5',
+
+    link: 'https://ourtravel.herokuapp.com',
+  },
+  {
     name: '김민영',
     title: '이사인볼트 (Esainbolt)',
     emojiFile: 'emoji_esainbolt.png',
@@ -22,20 +63,16 @@ const siteData = [
     link: 'https://dmdstudio3.herokuapp.com/',
   },
   {
-    name: '이주희',
-    title: '인터위버',
-    emojiFile: 'emoji_interview.png',
-    siteIntro: '인터뷰 참여자들이 서로\n엮어 만들어가는 사이트!',
+    name: '김유나',
+    title: 'amble',
+    emojiFile: 'emoji_amble.png',
+    siteIntro: '내 주변 산책로의\n모든 것, amble',
     description:
-      '인터위버는 과제수행이나 자료조사를 위해서 인터뷰 대상자를 구하는 인터뷰어, 혹은 자기홍보를 위해 인터뷰 참여를 원하는 인터뷰이들이 서로 연결되어 만날 수 있는 사이트입니다.\n급하게 인터뷰 참여자가 필요할 때, 힘들게 수소문 하지 마시고 손쉽게 사이트에서 원하는 분야의 참여자를 탐색하거나, 혹은 게시글을 통해 홍보해 보세요!',
-    navigateButtonColor: '#5A77D1',
-    siteImage: [
-      'interweaver_cap1.png',
-      'interweaver_cap2.png',
-      'interweaver_cap3.png',
-      'interweaver_cap4.png',
-    ],
-    link: 'https://aeanaklee.pythonanywhere.com/',
+      '분위기 좋은 곳에서 산책 할래요?\n내 주변 산책로를 찾아보고 산책을 즐기면서 경험한 소중한 추억을 공유해 보세요!',
+    navigateButtonColor: '#32E7BF',
+
+    siteImage: ['김유나_1.png', '김유나_2.png', '김유나_3.png', '김유나_4.png'],
+    link: 'https://guel.pythonanywhere.com/',
   },
   {
     name: '송유경',
@@ -50,31 +87,6 @@ const siteData = [
     link: '',
   },
   {
-    name: '김혜빈',
-    title: '모두의 여행',
-    emojiFile: 'emoji_travel.png',
-    siteIntro: '다양한 사람들의\n다양한 여행 기록',
-
-    description:
-      '😭: 여행 계획 짜기 힘들어\n🤔: 여행지 맛집 후기, 믿을만한 건가?\n😎: 이번 여행 너무 좋았는데 공유하고 싶어!\n🥲: 여행 대리만족하고 싶어..\n...\n이런 생각 해보셨다면 주목!\n\n1️⃣ 여행 떠나기 전에, 여행을 떠나고 싶을 때, 심심할 때... 언제든 사이트를 구경해보세요.\n2️⃣ 여행을 다녀와서 글과 이미지를 함께 게시해서 나의 여행 계획, 정보, 사진을 공유하고\n3️⃣ 해시태그 기능을 통해 여행지를 모아보세요!\n\n이 모든 것을 할 수 있는 곳, 모두의 여행입니다✈️',
-    siteImage: ['김혜빈_1.png', '김혜빈_2.png', '김혜빈_3.png', '김혜빈_4.png'],
-    navigateButtonColor: '#25B6F5',
-
-    link: 'https://ourtravel.herokuapp.com',
-  },
-  {
-    name: '김유나',
-    title: 'amble',
-    emojiFile: 'emoji_amble.png',
-    siteIntro: '내 주변 산책로의\n모든 것, amble',
-    description:
-      '분위기 좋은 곳에서 산책 할래요?\n내 주변 산책로를 찾아보고 산책을 즐기면서 경험한 소중한 추억을 공유해 보세요!',
-    navigateButtonColor: '#32E7BF',
-
-    siteImage: ['김유나_1.png', '김유나_2.png', '김유나_3.png', '김유나_4.png'],
-    link: 'https://guel.pythonanywhere.com/',
-  },
-  {
     name: '이지현',
     title: 'Movielog',
     emojiFile: 'emoji_movielog.png',
@@ -86,18 +98,7 @@ const siteData = [
     siteImage: ['이지현_1.png', '이지현_2.png', '이지현_3.png', '이지현_4.png'],
     link: '',
   },
-  {
-    name: '김도연',
-    title: 'DAYOFF',
-    emojiFile: 'emoji_day_off.png',
-    siteIntro: '쉬는 날 뭐해요?\n특별한 하루를 기록하고\n공유하는 웹사이트',
-    description:
-      '데이오프는 특별한 하루를 시간 순서대로 간편하게 기록하고 공유할 수 있는 웹사이트입니다.',
-    navigateButtonColor: '#A3EAFA',
 
-    siteImage: ['김도연_1.jpg', '김도연_2.jpg', '김도연_3.jpg', '김도연_4.jpg'],
-    link: 'https://dayoff.herokuapp.com/',
-  },
   {
     name: '윤지원',
     title: '우리 뭐 먹을까?',
